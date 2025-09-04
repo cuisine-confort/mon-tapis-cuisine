@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TapisiCuisine - Tapis de Cuisine Antidérapant et Absorbant</title>
+    <title>EléganceCuisine - Tapis Premium Antidérapant 50x160 cm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4a9d5e;
-            --primary-dark: #3a7c4a;
-            --secondary: #f8b400;
-            --light: #f9f9f9;
-            --dark: #333;
-            --gray: #666;
-            --light-gray: #eaeaea;
+            --primary: #2a6e3f;
+            --primary-light: #4a9d5e;
+            --primary-dark: #1a4d2a;
+            --secondary: #d4af37;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
         }
         
         * {
@@ -40,7 +41,7 @@
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 14px 35px;
+            padding: 16px 40px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
@@ -48,13 +49,15 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(74, 157, 94, 0.3);
+            box-shadow: 0 4px 15px rgba(42, 110, 63, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .btn:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
         
         section {
@@ -91,10 +94,11 @@
         
         .logo i {
             margin-right: 10px;
+            color: var(--secondary);
         }
         
         .hero {
-            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), 
+            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), 
                         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f8f8"/><path d="M0 0L100 100" stroke="%23eaeaea" stroke-width="2"/><path d="M100 0L0 100" stroke="%23eaeaea" stroke-width="2"/></svg>');
             background-size: cover;
             padding: 180px 0 100px;
@@ -102,7 +106,7 @@
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             color: var(--dark);
             line-height: 1.2;
@@ -119,15 +123,65 @@
             display: inline-block;
             background: var(--secondary);
             color: var(--dark);
-            padding: 8px 20px;
+            padding: 10px 25px;
             border-radius: 30px;
             font-weight: bold;
             margin-bottom: 20px;
             font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .dimension-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+        
+        .problem-solution {
+            background-color: var(--light);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .comparison-table .check {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .comparison-table .cross {
+            color: #dc3545;
+            font-size: 1.5rem;
         }
         
         .features {
-            background-color: var(--light);
+            background-color: white;
         }
         
         .section-title {
@@ -161,6 +215,7 @@
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
+            border-top: 5px solid var(--primary);
         }
         
         .feature-item:hover {
@@ -183,8 +238,37 @@
             color: var(--gray);
         }
         
+        .advantages {
+            background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .advantages .section-title h2 {
+            color: white;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .advantage-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .advantage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
         .testimonials {
-            background-color: white;
+            background-color: var(--light);
         }
         
         .testimonial-grid {
@@ -194,7 +278,7 @@
         }
         
         .testimonial-item {
-            background: var(--light);
+            background: white;
             padding: 35px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -220,19 +304,15 @@
         }
         
         .pricing {
-            background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
-            color: white;
+            background-color: white;
             text-align: center;
-        }
-        
-        .pricing .section-title h2 {
-            color: white;
         }
         
         .price {
             font-size: 3.5rem;
             margin: 20px 0;
             font-weight: bold;
+            color: var(--primary);
         }
         
         .pricing-content {
@@ -242,11 +322,13 @@
         
         .guarantee {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 25px;
+            background: var(--light);
+            padding: 15px 30px;
             border-radius: 30px;
             margin: 30px 0;
             font-weight: bold;
+            color: var(--dark);
+            border: 2px dashed var(--primary);
         }
         
         .faq {
@@ -302,6 +384,8 @@
             display: flex;
             gap: 25px;
             margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .footer-links a {
@@ -433,6 +517,10 @@
             .modal {
                 padding: 30px 20px;
             }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -440,7 +528,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo"><i class="fas fa-utensils"></i>TapisiCuisine</div>
+                <div class="logo"><i class="fas fa-utensils"></i>EléganceCuisine</div>
                 <a href="#" class="btn" id="header-cta">Précommander</a>
             </nav>
         </div>
@@ -448,22 +536,67 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">Nouveau produit révolutionnaire</div>
-            <h1>Découvrez le Tapis de Cuisine Révolutionnaire</h1>
-            <p>Antidérapant, Ultra-Absorbant et Élégant - Protège Vos Sols et Vos Pieds pendant que vous cuisinez</p>
-            <a href="#" class="btn" id="hero-cta">Je veux le mien !</a>
+            <div class="hero-badge">EXCLUSIVITÉ 2024</div>
+            <h1>Le Premier Tapis de Cuisine 50x160 cm<br>à Absorption Totale</h1>
+            <p>Antidérapant, Ultra-Absorbant et Élégant - Conçu spécialement pour les cuisines contemporaines</p>
+            <div class="dimension-badge">Format exclusif 50x160 cm</div>
+            <br>
+            <a href="#" class="btn" id="hero-cta">Découvrir le tapis révolutionnaire</a>
         </div>
     </section>
 
-    <section>
+    <section class="problem-solution">
         <div class="container">
             <div class="section-title">
-                <h2>Fatigué des tapis de cuisine ordinaires ?</h2>
-                <p>Les tapis traditionnels glissent, s'usent rapidement et n'absorbent pas correctement</p>
+                <h2>Pourquoi les tapis ordinaires ne suffisent plus ?</h2>
+                <p>Découvrez comment notre tapis résout les problèmes que les autres ignorent</p>
             </div>
-            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.2rem; margin-bottom: 30px;">Les tapis de cuisine traditionnels glissent, s'usent rapidement et n'absorbent pas correctement les liquides. Ils deviennent rapidement sales et sont difficiles à nettoyer.</p>
-                <p style="font-size: 1.2rem;">Notre tapis de cuisine premium résout tous ces problèmes avec une technologie innovante qui garde votre tapis en place, absorbe les liquides instantanément et reste beau longtemps.</p>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Caractéristiques</th>
+                    <th>Tapis Standard</th>
+                    <th>Notre Tapis EléganceCuisine</th>
+                </tr>
+                <tr>
+                    <td>Antidérapance quand humide</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+                <tr>
+                    <td>Absorption des liquides gras</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+                <tr>
+                    <td>Format 50x160 cm</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+                <tr>
+                    <td>Absorption durable après lavages</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+                <tr>
+                    <td>Matériaux sans odeur</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+                <tr>
+                    <td>Design français élégant</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+                <tr>
+                    <td>Garantie 2 ans</td>
+                    <td class="cross"><i class="fas fa-times-circle"></i></td>
+                    <td class="check"><i class="fas fa-check-circle"></i></td>
+                </tr>
+            </table>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn">Voir la différence par vous-même</a>
             </div>
         </div>
     </section>
@@ -471,29 +604,55 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Pourquoi choisir notre tapis de cuisine ?</h2>
-                <p>Découvrez tous les avantages de notre produit révolutionnaire</p>
+                <h2>Une innovation brevetée pour une cuisine sans compromis</h2>
+                <p>Découvrez les technologies exclusives qui font la différence</p>
             </div>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-grip-horizontal"></i></div>
-                    <h3>Antidérapant</h3>
-                    <p>Notre technologie exclusive maintient le tapis fermement en place, même pendant les mouvements les plus dynamiques.</p>
+                    <div class="feature-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Format sur mesure 50x160 cm</h3>
+                    <p>Spécialement conçu pour les cuisines contemporaines aux plans de travail longs. Plus besoin d'assembler plusieurs petits tapis.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-tint"></i></div>
-                    <h3>Super absorbant</h3>
-                    <p>Capacité d'absorption 3x supérieure aux tapis conventionnels. Protège vos sols des éclaboussures.</p>
+                    <div class="feature-icon"><i class="fas fa-tint-slash"></i></div>
+                    <h3>Absorption totale</h3>
+                    <p>Notre technologie exclusive absorbe instantanément même les liquides gras et les jus colorés sans laisser de traces.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-soap"></i></div>
-                    <h3>Facile à nettoyer</h3>
-                    <p>Passe en machine à laver sans perdre ses propriétés antidérapantes ou absorbantes.</p>
+                    <div class="feature-icon"><i class="fas fa-ban"></i></div>
+                    <h3>Antidérapance ultime</h3>
+                    <p>Même entièrement mouillé, notre tapis reste fermement en place grâce à sa base en caoutchouc naturel à haute adhérence.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon"><i class="fas fa-leaf"></i></div>
-                    <h3>Écologique</h3>
-                    <p>Fabriqué à partir de matériaux recyclés et durables, respectueux de l'environnement.</p>
+                    <h3>Écologique et sans odeur</h3>
+                    <p>Fabriqué à partir de matériaux 100% naturels sans produits chimiques, contrairement aux tapis en caoutchouc synthétique qui dégagent une odeur désagréable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <div class="section-title">
+                <h2>EléganceCuisine : le choix évident pour les connaisseurs</h2>
+                <p>Découvrez pourquoi notre tapis surpasse tous les autres</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Fabrication Française</h3>
+                    <p>Contrairement à la concurrence asiatique, notre tapis est conçu et fabriqué en France dans le respect des normes les plus strictes.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Garantie 2 ans</h3>
+                    <p>Nous garantissons la durabilité de notre tapis contre tout défaut d'absorption ou d'antidérapance pendant 24 mois.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Design élégant</h3>
+                    <p>Disponible en 5 coloris tendance spécialement étudiés pour s'harmoniser avec les cuisines modernes.</p>
                 </div>
             </div>
         </div>
@@ -502,21 +661,21 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Ce que nos clients disent</h2>
+                <h2>Ils ont adopté EléganceCuisine</h2>
                 <p>Découvrez les témoignages de nos clients satisfaits</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Ce tapis a révolutionné ma cuisine! Plus de glissades dangereuses et il absorbe parfaitement les éclaboussures. Je ne peux plus m'en passer!"</p>
-                    <p class="testimonial-author"><i class="fas fa-user"></i> Marie D., Paris</p>
+                    <p class="testimonial-text">"Enfin un tapis qui ne glisse pas ! Après avoir testé 3 marques différentes qui glissaient toutes dès qu'elles étaient humides, EléganceCuisine tient parfaitement même mouillé. Le format 160cm est parfait pour ma cuisine island."</p>
+                    <p class="testimonial-author"><i class="fas fa-user"></i> Sophie L., architecte d'intérieur</p>
                 </div>
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Je cherchais un tapis qui ne bouge pas pendant que je cuisine. Celui-ci reste parfaitement en place, même quand mes enfants courent autour! Un vrai bonheur."</p>
-                    <p class="testimonial-author"><i class="fas fa-user"></i> Thomas L., Lyon</p>
+                    <p class="testimonial-text">"L'absorption est incroyable. J'ai renversé un verre entier d'huile d'olive et le tapis a tout absorbé en quelques secondes sans laisser de trace. Avec mes anciens tapis, ça aurait été la catastrophe."</p>
+                    <p class="testimonial-author"><i class="fas fa-user"></i> Thomas M., chef cuisinier</p>
                 </div>
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Très facile à nettoyer et il a l'air neuf après plusieurs mois d'utilisation. Bien mieux que les autres tapis que j'ai essayés. Je recommande!"</p>
-                    <p class="testimonial-author"><i class="fas fa-user"></i> Sophie M., Bordeaux</p>
+                    <p class="testimonial-text">"Plus d'odeur de caoutchouc ! C'est ce qui m'a convaincue. Les autres tapis sentaient le caoutchouc synthétique pendant des semaines. Celui-ci est sans odeur et semble bien plus naturel."</p>
+                    <p class="testimonial-author"><i class="fas fa-user"></i> Émilie R., mère de famille</p>
                 </div>
             </div>
         </div>
@@ -529,10 +688,10 @@
                 <p>Commandez aujourd'hui et profitez de notre offre spéciale de pré-lancement</p>
             </div>
             <div class="pricing-content">
-                <div class="price">34,99€ <span style="text-decoration: line-through; font-size: 2rem; opacity: 0.8;">49,99€</span></div>
-                <p style="margin-bottom: 30px; font-size: 1.2rem;">Livraison gratuite + Guide de recettes offert pour les 50 premières commandes!</p>
-                <a href="#" class="btn" id="pricing-cta">Précommander Maintenant</a>
-                <div class="guarantee">✅ Garantie satisfait ou remboursé 30 jours</div>
+                <div class="price">39,90€ <span style="text-decoration: line-through; font-size: 2rem; opacity: 0.8;">59,90€</span></div>
+                <p style="margin-bottom: 30px; font-size: 1.2rem;">Format exclusif 50x160 cm - Livraison gratuite</p>
+                <a href="#" class="btn" id="pricing-cta">Je profite de l'offre</a>
+                <div class="guarantee">✅ Garantie satisfait ou remboursé 30 jours + Garantie 2 ans</div>
             </div>
         </div>
     </section>
@@ -545,20 +704,20 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">Comment nettoyer le tapis ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Notre tapis passe parfaitement en machine à laver à 30°C. Il sèche rapidement et conserve toutes ses propriétés. Vous pouvez également le nettoyer avec une éponge humide pour les petites salissures.</div>
+                    <div class="faq-question">Pourquoi le format 50x160 cm est-il idéal ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Le format 50x160 cm a été spécialement conçu pour les cuisines contemporaines avec de longs plans de travail ou des îlots centraux. Il évite d'avoir à assembler plusieurs petits tapis qui créent des interruptions disgracieuses et des risques de trébuchement.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quand sera-t-il livré ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Les précommandes seront livrées dans un délai de 2-3 semaines après la fin de la campagne. Vous recevrez un email de confirmation avec un numéro de suivi dès l'expédition.</div>
+                    <div class="faq-question">Comment votre tapis reste-t-il antidérapant même mouillé ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Contrairement aux tapis standards dont la base antidérapante perd son efficacité une fois humide, notre technologie exclusive utilise un caoutchouc naturel micro-ventilé qui maintient son adhérence même complètement saturé en eau.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quelles sont les dimensions du tapis ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Le tapis mesure 70cm x 120cm, la taille idéale pour la plupart des cuisines. Une version plus petite (60cm x 90cm) sera bientôt disponible.</div>
+                    <div class="faq-question">Comment se fait-il qu'il n'y ait pas d'odeur de caoutchouc ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Les tapis concurrents utilisent souvent du caoutchouc synthétique ou des matériaux recyclés qui dégagent une forte odeur. Notre tapis est fabriqué à partir de caoutchouc naturel 100% pur et de fibres écologiques sans additifs chimiques, ce qui élimine totalement les odeurs désagréables.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quels sont les matériaux utilisés ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Nous utilisons des matériaux écologiques à base de caoutchouc naturel recyclé pour la base antidérapante et de microfibres absorbantes de haute qualité pour la surface. Tous nos matériaux sont sans BPA et non toxiques.</div>
+                    <div class="faq-question">Est-il vraiment efficace sur les liquides gras ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Absolument. Notre technologie d'absorption brevetée fonctionne même avec les liquides gras comme l'huile, contrairement aux tapis classiques qui laissent stagnir les corps gras en surface. La couche supérieure est traitée pour absorber instantanément tous types de liquides.</div>
                 </div>
             </div>
         </div>
@@ -567,7 +726,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><i class="fas fa-utensils"></i> TapisiCuisine</div>
+                <div class="footer-logo"><i class="fas fa-utensils"></i> EléganceCuisine</div>
                 <p>Le tapis de cuisine révolutionnaire qui allie confort, sécurité et design</p>
                 <div class="footer-links">
                     <a href="#">Accueil</a>
@@ -576,8 +735,8 @@
                     <a href="#">FAQ</a>
                     <a href="#">Contact</a>
                 </div>
-                <p>Email: contact@tapisicuisine.fr | Tel: 01 23 45 67 89</p>
-                <p class="copyright">© 2023 TapisiCuisine. Tous droits réservés.</p>
+                <p>Email: contact@elegancecuisine.fr | Tel: 01 23 45 67 89</p>
+                <p class="copyright">© 2024 EléganceCuisine. Tous droits réservés. Fabrication française.</p>
             </div>
         </div>
     </footer>
