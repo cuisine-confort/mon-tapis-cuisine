@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComfyCuisine - Tapis de Cuisine Antidérapant et Absorbant</title>
+    <title>TapisiCuisine - Tapis de Cuisine Antidérapant et Absorbant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Styles généraux */
+        /* Variables et reset */
+        :root {
+            --primary: #4a9d5e;
+            --primary-dark: #3a7c4a;
+            --secondary: #f8b400;
+            --light: #f9f9f9;
+            --dark: #333;
+            --gray: #666;
+            --light-gray: #eaeaea;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +25,9 @@
         }
         
         body {
-            color: #333;
+            color: var(--dark);
             line-height: 1.6;
+            background-color: #fff;
         }
         
         .container {
@@ -27,31 +39,37 @@
         
         .btn {
             display: inline-block;
-            background: #4a9d5e;
+            background: var(--primary);
             color: white;
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(74, 157, 94, 0.3);
         }
         
         .btn:hover {
-            background: #3a7c4a;
+            background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
         
         section {
-            padding: 60px 0;
+            padding: 80px 0;
+        }
+        
+        .text-center {
+            text-align: center;
         }
         
         /* Header */
         header {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -66,66 +84,107 @@
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            color: #4a9d5e;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
         }
         
         /* Hero section */
         .hero {
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f8f8"/><path d="M0 0L100 100" stroke="%23eaeaea" stroke-width="2"/><path d="M100 0L0 100" stroke="%23eaeaea" stroke-width="2"/></svg>');
+            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f8f8"/><path d="M0 0L100 100" stroke="%23eaeaea" stroke-width="2"/><path d="M100 0L0 100" stroke="%23eaeaea" stroke-width="2"/></svg>');
             background-size: cover;
-            padding: 150px 0 80px;
+            padding: 180px 0 100px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-            color: #333;
+            color: var(--dark);
+            line-height: 1.2;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #666;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
         }
         
         /* Features */
         .features {
-            background-color: #f9f9f9;
+            background-color: var(--light);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            font-size: 2rem;
-            color: #333;
+            font-size: 2.5rem;
+            color: var(--dark);
             margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
         
         .feature-item {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 40px 30px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
-            color: #4a9d5e;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-item p {
+            color: var(--gray);
         }
         
         /* Testimonials */
@@ -135,68 +194,254 @@
         
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
         
         .testimonial-item {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: var(--light);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark);
         }
         
         .testimonial-author {
             font-weight: bold;
-            color: #4a9d5e;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author i {
+            margin-right: 10px;
         }
         
         /* Pricing */
         .pricing {
-            background-color: #f9f9f9;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+            color: white;
             text-align: center;
         }
         
+        .pricing .section-title h2 {
+            color: white;
+        }
+        
         .price {
-            font-size: 3rem;
-            color: #4a9d5e;
+            font-size: 3.5rem;
             margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .pricing-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .guarantee {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin: 30px 0;
+            font-weight: bold;
         }
         
         /* FAQ */
+        .faq {
+            background-color: var(--light);
+        }
+        
         .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 25px;
         }
         
         .faq-question {
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            line-height: 1.8;
         }
         
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: var(--dark);
             color: white;
-            padding: 40px 0;
+            padding: 60px 0 30px;
             text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .modal-text {
+            margin-bottom: 25px;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .thank-you-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .thank-you-message i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .feature-item, .testimonial-item {
+                padding: 25px 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .modal {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -206,8 +451,8 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">ComfyCuisine</div>
-                <a href="#order" class="btn">Précommander</a>
+                <div class="logo"><i class="fas fa-utensils"></i>TapisiCuisine</div>
+                <a href="#" class="btn" id="header-cta">Précommander</a>
             </nav>
         </div>
     </header>
@@ -215,9 +460,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
+            <div class="hero-badge">Nouveau produit révolutionnaire</div>
             <h1>Découvrez le Tapis de Cuisine Révolutionnaire</h1>
             <p>Antidérapant, Ultra-Absorbant et Élégant - Protège Vos Sols et Vos Pieds pendant que vous cuisinez</p>
-            <a href="#order" class="btn">Je veux le mien !</a>
+            <a href="#" class="btn" id="hero-cta">Je veux le mien !</a>
         </div>
     </section>
 
@@ -226,10 +472,11 @@
         <div class="container">
             <div class="section-title">
                 <h2>Fatigué des tapis de cuisine ordinaires ?</h2>
+                <p>Les tapis traditionnels glissent, s'usent rapidement et n'absorbent pas correctement</p>
             </div>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p>Les tapis de cuisine traditionnels glissent, s'usent rapidement et n'absorbent pas correctement les liquides. Ils deviennent rapidement sales et sont difficiles à nettoyer.</p>
-                <p>Notre tapis de cuisine premium résout tous ces problèmes avec une technologie innovante qui garde votre tapis en place, absorbe les liquides instantanément et reste beau longtemps.</p>
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Les tapis de cuisine traditionnels glissent, s'usent rapidement et n'absorbent pas correctement les liquides. Ils deviennent rapidement sales et sont difficiles à nettoyer.</p>
+                <p style="font-size: 1.2rem;">Notre tapis de cuisine premium résout tous ces problèmes avec une technologie innovante qui garde votre tapis en place, absorbe les liquides instantanément et reste beau longtemps.</p>
             </div>
         </div>
     </section>
@@ -239,25 +486,26 @@
         <div class="container">
             <div class="section-title">
                 <h2>Pourquoi choisir notre tapis de cuisine ?</h2>
+                <p>Découvrez tous les avantages de notre produit révolutionnaire</p>
             </div>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon"><i class="fas fa-grip-horizontal"></i></div>
                     <h3>Antidérapant</h3>
                     <p>Notre technologie exclusive maintient le tapis fermement en place, même pendant les mouvements les plus dynamiques.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">💧</div>
+                    <div class="feature-icon"><i class="fas fa-tint"></i></div>
                     <h3>Super absorbant</h3>
                     <p>Capacité d'absorption 3x supérieure aux tapis conventionnels. Protège vos sols des éclaboussures.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">🧼</div>
+                    <div class="feature-icon"><i class="fas fa-soap"></i></div>
                     <h3>Facile à nettoyer</h3>
                     <p>Passe en machine à laver sans perdre ses propriétés antidérapantes ou absorbantes.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">🌿</div>
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
                     <h3>Écologique</h3>
                     <p>Fabriqué à partir de matériaux recyclés et durables, respectueux de l'environnement.</p>
                 </div>
@@ -270,19 +518,20 @@
         <div class="container">
             <div class="section-title">
                 <h2>Ce que nos clients disent</h2>
+                <p>Découvrez les témoignages de nos clients satisfaits</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Ce tapis a révolutionné ma cuisine! Plus de glissades dangereuses et il absorbe parfaitement les éclaboussures."</p>
-                    <p class="testimonial-author">Marie D., Paris</p>
+                    <p class="testimonial-text">"Ce tapis a révolutionné ma cuisine! Plus de glissades dangereuses et il absorbe parfaitement les éclaboussures. Je ne peux plus m'en passer!"</p>
+                    <p class="testimonial-author"><i class="fas fa-user"></i> Marie D., Paris</p>
                 </div>
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Je cherchais un tapis qui ne bouge pas pendant que je cuisine. Celui-ci reste parfaitement en place, même quand mes enfants courent autour!"</p>
-                    <p class="testimonial-author">Thomas L., Lyon</p>
+                    <p class="testimonial-text">"Je cherchais un tapis qui ne bouge pas pendant que je cuisine. Celui-ci reste parfaitement en place, même quand mes enfants courent autour! Un vrai bonheur."</p>
+                    <p class="testimonial-author"><i class="fas fa-user"></i> Thomas L., Lyon</p>
                 </div>
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Très facile à nettoyer et il a l'air neuf après plusieurs mois d'utilisation. Bien mieux que les autres tapis que j'ai essayés."</p>
-                    <p class="testimonial-author">Sophie M., Bordeaux</p>
+                    <p class="testimonial-text">"Très facile à nettoyer et il a l'air neuf après plusieurs mois d'utilisation. Bien mieux que les autres tapis que j'ai essayés. Je recommande!"</p>
+                    <p class="testimonial-author"><i class="fas fa-user"></i> Sophie M., Bordeaux</p>
                 </div>
             </div>
         </div>
@@ -295,34 +544,38 @@
                 <h2>Offre de Lancement Exclusive</h2>
                 <p>Commandez aujourd'hui et profitez de notre offre spéciale de pré-lancement</p>
             </div>
-            <div class="price">34,99€ <span style="text-decoration: line-through; font-size: 1.5rem; color: #777;">49,99€</span></div>
-            <p>Livraison gratuite + Guide de recettes offert pour les 50 premières commandes!</p>
-            <a href="#" class="btn" style="margin-top: 20px;">Précommander Maintenant</a>
+            <div class="pricing-content">
+                <div class="price">34,99€ <span style="text-decoration: line-through; font-size: 2rem; opacity: 0.8;">49,99€</span></div>
+                <p style="margin-bottom: 30px; font-size: 1.2rem;">Livraison gratuite + Guide de recettes offert pour les 50 premières commandes!</p>
+                <a href="#" class="btn" id="pricing-cta">Précommander Maintenant</a>
+                <div class="guarantee">✅ Garantie satisfait ou remboursé 30 jours</div>
+            </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section>
+    <section class="faq">
         <div class="container">
             <div class="section-title">
                 <h2>Questions Fréquentes</h2>
+                <p>Trouvez les réponses aux questions les plus posées</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">Comment nettoyer le tapis ?</div>
-                    <div class="faq-answer">Notre tapis passe parfaitement en machine à laver à 30°C. Il sèche rapidement et conserve toutes ses propriétés.</div>
+                    <div class="faq-question">Comment nettoyer le tapis ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Notre tapis passe parfaitement en machine à laver à 30°C. Il sèche rapidement et conserve toutes ses propriétés. Vous pouvez également le nettoyer avec une éponge humide pour les petites salissures.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quand sera-t-il livré ?</div>
-                    <div class="faq-answer">Les précommandes seront livrées dans un délai de 2-3 semaines après la fin de la campagne.</div>
+                    <div class="faq-question">Quand sera-t-il livré ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Les précommandes seront livrées dans un délai de 2-3 semaines après la fin de la campagne. Vous recevrez un email de confirmation avec un numéro de suivi dès l'expédition.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quelles sont les dimensions du tapis ?</div>
-                    <div class="faq-answer">Le tapis mesure 70cm x 120cm, la taille idéale pour la plupart des cuisines.</div>
+                    <div class="faq-question">Quelles sont les dimensions du tapis ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Le tapis mesure 70cm x 120cm, la taille idéale pour la plupart des cuisines. Une version plus petite (60cm x 90cm) sera bientôt disponible.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quels sont les matériaux utilisés ?</div>
-                    <div class="faq-answer">Nous utilisons des matériaux écologiques à base de caoutchouc naturel recyclé et de microfibres absorbantes.</div>
+                    <div class="faq-question">Quels sont les matériaux utilisés ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Nous utilisons des matériaux écologiques à base de caoutchouc naturel recyclé pour la base antidérapante et de microfibres absorbantes de haute qualité pour la surface. Tous nos matériaux sont sans BPA et non toxiques.</div>
                 </div>
             </div>
         </div>
@@ -331,18 +584,123 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2023 ComfyCuisine. Tous droits réservés.</p>
-            <p>Contact: contact@comfycuisine.fr | Tel: 01 23 45 67 89</p>
+            <div class="footer-content">
+                <div class="footer-logo"><i class="fas fa-utensils"></i> TapisiCuisine</div>
+                <p>Le tapis de cuisine révolutionnaire qui allie confort, sécurité et design</p>
+                <div class="footer-links">
+                    <a href="#">Accueil</a>
+                    <a href="#">Caractéristiques</a>
+                    <a href="#">Avis</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p>Email: contact@tapisicuisine.fr | Tel: 01 23 45 67 89</p>
+                <p class="copyright">© 2023 TapisiCuisine. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Modal Formulaire -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="modal-close" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div id="form-container">
+                    <h2 class="modal-title">Précommander votre tapis</h2>
+                    <p class="modal-text">Inscrivez-vous pour être parmi les premiers informés du lancement et bénéficier de l'offre exclusive de pré-lancement!</p>
+                    
+                    <form id="email-form">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Votre email" required>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Réserver mon tapis</button>
+                    </form>
+                </div>
+                
+                <div class="thank-you-message" id="thank-you">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Merci !</h2>
+                    <p>Nous vous enverrons très soon toutes les informations pour finaliser votre précommande.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Simple script pour les FAQ
+        // Script pour les FAQ
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+                const icon = question.querySelector('i');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
             });
+        });
+        
+        // Fermer les réponses au chargement de la page
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+        
+        // Script pour le modal de formulaire
+        const modal = document.getElementById('modal');
+        const closeModal = document.getElementById('close-modal');
+        const emailForm = document.getElementById('email-form');
+        const formContainer = document.getElementById('form-container');
+        const thankYou = document.getElementById('thank-you');
+        
+        // Ouvrir le modal quand on clique sur les CTA
+        document.querySelectorAll('.btn').forEach(btn => {
+            if (btn.id !== 'close-modal') {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+        });
+        
+        // Fermer le modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Fermer en cliquant à l'extérieur
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Soumission du formulaire
+        emailForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Ici, normalement, vous enverriez les données à un serveur
+            // Pour cette démo, on simule juste l'envoi
+            
+            // Afficher le message de remerciement
+            formContainer.style.display = 'none';
+            thankYou.style.display = 'block';
+            
+            // Rediriger vers WhatsApp après 3 secondes (optionnel)
+            setTimeout(() => {
+                // window.location.href = "https://wa.me/33612345678?text=Je%20suis%20intéressé%20par%20le%20tapis%20de%20cuisine";
+            }, 3000);
         });
     </script>
 </body>
