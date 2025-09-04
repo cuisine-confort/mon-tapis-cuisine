@@ -6,7 +6,6 @@
     <title>TapisiCuisine - Tapis de Cuisine Antidérapant et Absorbant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Variables et reset */
         :root {
             --primary: #4a9d5e;
             --primary-dark: #3a7c4a;
@@ -66,7 +65,6 @@
             text-align: center;
         }
         
-        /* Header */
         header {
             background-color: white;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -95,7 +93,6 @@
             margin-right: 10px;
         }
         
-        /* Hero section */
         .hero {
             background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), 
                         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f8f8"/><path d="M0 0L100 100" stroke="%23eaeaea" stroke-width="2"/><path d="M100 0L0 100" stroke="%23eaeaea" stroke-width="2"/></svg>');
@@ -129,7 +126,6 @@
             font-size: 1.1rem;
         }
         
-        /* Features */
         .features {
             background-color: var(--light);
         }
@@ -187,7 +183,6 @@
             color: var(--gray);
         }
         
-        /* Testimonials */
         .testimonials {
             background-color: white;
         }
@@ -224,7 +219,6 @@
             margin-right: 10px;
         }
         
-        /* Pricing */
         .pricing {
             background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
             color: white;
@@ -255,7 +249,6 @@
             font-weight: bold;
         }
         
-        /* FAQ */
         .faq {
             background-color: var(--light);
         }
@@ -285,7 +278,6 @@
             line-height: 1.8;
         }
         
-        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
@@ -327,7 +319,6 @@
             color: rgba(255,255,255,0.7);
         }
         
-        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -417,7 +408,6 @@
             margin-bottom: 20px;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -447,7 +437,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -457,7 +446,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-badge">Nouveau produit révolutionnaire</div>
@@ -467,7 +455,6 @@
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section>
         <div class="container">
             <div class="section-title">
@@ -481,7 +468,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <div class="container">
             <div class="section-title">
@@ -513,7 +499,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
@@ -537,7 +522,6 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section class="pricing" id="order">
         <div class="container">
             <div class="section-title">
@@ -553,7 +537,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
             <div class="section-title">
@@ -581,7 +564,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -600,7 +582,6 @@
         </div>
     </footer>
 
-    <!-- Modal Formulaire -->
     <div class="modal-overlay" id="modal">
         <div class="modal">
             <button class="modal-close" id="close-modal">
@@ -633,7 +614,6 @@
     </div>
 
     <script>
-        // Script pour les FAQ
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
@@ -649,19 +629,16 @@
             });
         });
         
-        // Fermer les réponses au chargement de la page
         document.querySelectorAll('.faq-answer').forEach(answer => {
             answer.style.display = 'none';
         });
         
-        // Script pour le modal de formulaire
         const modal = document.getElementById('modal');
         const closeModal = document.getElementById('close-modal');
         const emailForm = document.getElementById('email-form');
         const formContainer = document.getElementById('form-container');
         const thankYou = document.getElementById('thank-you');
         
-        // Ouvrir le modal quand on clique sur les CTA
         document.querySelectorAll('.btn').forEach(btn => {
             if (btn.id !== 'close-modal') {
                 btn.addEventListener('click', (e) => {
@@ -672,13 +649,11 @@
             }
         });
         
-        // Fermer le modal
         closeModal.addEventListener('click', () => {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
         
-        // Fermer en cliquant à l'extérieur
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
@@ -686,19 +661,13 @@
             }
         });
         
-        // Soumission du formulaire
         emailForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Ici, normalement, vous enverriez les données à un serveur
-            // Pour cette démo, on simule juste l'envoi
-            
-            // Afficher le message de remerciement
             formContainer.style.display = 'none';
             thankYou.style.display = 'block';
             
-            // Rediriger vers WhatsApp après 3 secondes (optionnel)
             setTimeout(() => {
+                // Redirection vers WhatsApp (optionnel)
                 // window.location.href = "https://wa.me/33612345678?text=Je%20suis%20intéressé%20par%20le%20tapis%20de%20cuisine";
             }, 3000);
         });
