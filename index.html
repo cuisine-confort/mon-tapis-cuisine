@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComfyCuisine - Tapis de Cuisine Antidérapant et Absorbant</title>
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4a9d5e;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #3a7c4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a9d5e;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f8f8"/><path d="M0 0L100 100" stroke="%23eaeaea" stroke-width="2"/><path d="M100 0L0 100" stroke="%23eaeaea" stroke-width="2"/></svg>');
+            background-size: cover;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+        
+        /* Features */
+        .features {
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #4a9d5e;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-item {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #4a9d5e;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 3rem;
+            color: #4a9d5e;
+            margin: 20px 0;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ComfyCuisine</div>
+                <a href="#order" class="btn">Précommander</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Découvrez le Tapis de Cuisine Révolutionnaire</h1>
+            <p>Antidérapant, Ultra-Absorbant et Élégant - Protège Vos Sols et Vos Pieds pendant que vous cuisinez</p>
+            <a href="#order" class="btn">Je veux le mien !</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Fatigué des tapis de cuisine ordinaires ?</h2>
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p>Les tapis de cuisine traditionnels glissent, s'usent rapidement et n'absorbent pas correctement les liquides. Ils deviennent rapidement sales et sont difficiles à nettoyer.</p>
+                <p>Notre tapis de cuisine premium résout tous ces problèmes avec une technologie innovante qui garde votre tapis en place, absorbe les liquides instantanément et reste beau longtemps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi choisir notre tapis de cuisine ?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Antidérapant</h3>
+                    <p>Notre technologie exclusive maintient le tapis fermement en place, même pendant les mouvements les plus dynamiques.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💧</div>
+                    <h3>Super absorbant</h3>
+                    <p>Capacité d'absorption 3x supérieure aux tapis conventionnels. Protège vos sols des éclaboussures.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧼</div>
+                    <h3>Facile à nettoyer</h3>
+                    <p>Passe en machine à laver sans perdre ses propriétés antidérapantes ou absorbantes.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Écologique</h3>
+                    <p>Fabriqué à partir de matériaux recyclés et durables, respectueux de l'environnement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ce que nos clients disent</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Ce tapis a révolutionné ma cuisine! Plus de glissades dangereuses et il absorbe parfaitement les éclaboussures."</p>
+                    <p class="testimonial-author">Marie D., Paris</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Je cherchais un tapis qui ne bouge pas pendant que je cuisine. Celui-ci reste parfaitement en place, même quand mes enfants courent autour!"</p>
+                    <p class="testimonial-author">Thomas L., Lyon</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Très facile à nettoyer et il a l'air neuf après plusieurs mois d'utilisation. Bien mieux que les autres tapis que j'ai essayés."</p>
+                    <p class="testimonial-author">Sophie M., Bordeaux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="order">
+        <div class="container">
+            <div class="section-title">
+                <h2>Offre de Lancement Exclusive</h2>
+                <p>Commandez aujourd'hui et profitez de notre offre spéciale de pré-lancement</p>
+            </div>
+            <div class="price">34,99€ <span style="text-decoration: line-through; font-size: 1.5rem; color: #777;">49,99€</span></div>
+            <p>Livraison gratuite + Guide de recettes offert pour les 50 premières commandes!</p>
+            <a href="#" class="btn" style="margin-top: 20px;">Précommander Maintenant</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Questions Fréquentes</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Comment nettoyer le tapis ?</div>
+                    <div class="faq-answer">Notre tapis passe parfaitement en machine à laver à 30°C. Il sèche rapidement et conserve toutes ses propriétés.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quand sera-t-il livré ?</div>
+                    <div class="faq-answer">Les précommandes seront livrées dans un délai de 2-3 semaines après la fin de la campagne.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quelles sont les dimensions du tapis ?</div>
+                    <div class="faq-answer">Le tapis mesure 70cm x 120cm, la taille idéale pour la plupart des cuisines.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quels sont les matériaux utilisés ?</div>
+                    <div class="faq-answer">Nous utilisons des matériaux écologiques à base de caoutchouc naturel recyclé et de microfibres absorbantes.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2023 ComfyCuisine. Tous droits réservés.</p>
+            <p>Contact: contact@comfycuisine.fr | Tel: 01 23 45 67 89</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script pour les FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
